@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "./static/css/main.766db1cb.css",
+    "main.js": "./static/js/main.3c47dd25.js",
+    "static/js/787.9118d4e6.chunk.js": "./static/js/787.9118d4e6.chunk.js",
+    "static/media/jumbo-clouds.jpg": "./static/media/jumbo-clouds.00a917a3940dd0eeb175.jpg",
+    "static/media/weathericons-regular-webfont.svg": "./static/media/weathericons-regular-webfont.1341a15172cec8dae06e.svg",
+    "static/media/weathericons-regular-webfont.eot": "./static/media/weathericons-regular-webfont.bb2ec001c20cf752f852.eot",
+    "static/media/weathericons-regular-webfont.ttf": "./static/media/weathericons-regular-webfont.0942d1e1c447d6ce3ffc.ttf",
+    "static/media/weathericons-regular-webfont.woff": "./static/media/weathericons-regular-webfont.371511ddba5fdac0538c.woff",
+    "static/media/weathericons-regular-webfont.woff2": "./static/media/weathericons-regular-webfont.e218aee6928fe3da9ed6.woff2",
+    "index.html": "./index.html",
+    "main.766db1cb.css.map": "./static/css/main.766db1cb.css.map",
+    "main.3c47dd25.js.map": "./static/js/main.3c47dd25.js.map",
+    "787.9118d4e6.chunk.js.map": "./static/js/787.9118d4e6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.766db1cb.css",
+    "static/js/main.3c47dd25.js"
+  ]
+}

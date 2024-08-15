@@ -1,0 +1,313 @@
+7.0.2.4 - Jun 2024 - Fixed graphing bug where max temps overflowed Y-axis at 85 degrees.
+                   - Fixed low-contrast issue with buttons in alert component when warning & extreme alerts.
+7.0.2.3 - Jan 2024 - Use Human-readable System Summary Card Titles instead of field names
+                   - Testing "Expired Alerts Still Active" idea.  Where alerts that are still shown as active but
+                       have expired are still shown for a time (things like Winter Storm Watches/Warnings and Flood
+                       Warnings don't always get updated/replaced/renewed on time but are still active.  Might be
+                       nice to have delay in there to display for a time.)  Marked with an exclamation point in the
+                       Alert Item after the Active Icon.
+                   - Fixed Berrien County (NWS split zone into north and south. Had to update zone code in config.)
+                   - Added "filtered" label in Alert County List (alert info offcanvas)
+                   - Google Analytics migrated to GA4
+                   - TODO: Ticks (and labels on large screens) on navigation slider.
+7.0.2.2 - Oct 2023 - Numbers in system summary fixed to 2 decimals.
+                   - Changed some y-axis values on observation charts.  (orh, wspeed, wgust, rain, sr, uv... ymin=0)
+                   - Observation charts can now be expanded to show enlarged graph in a modal.
+                   - Added y-axis min & max range settings for temperature (otemp, ochill, oheat, odew, itemp)
+                   - Fixed y-max issue on wspeed, wgust, rain charts.
+                   - Made WAG box messages with two levels (warning & danger) based upon severity.
+                   - Fixed title in Image Modal for System Image Collage
+                   - Added graph modal
+7.0.2.1 - Sep 2023 - Fixed radar animation (made smoother).
+                   - Further fix to radar centering.
+                   - Fixed alert log date sorting issues.
+                   - Formatted date/time in alert log correctly.
+                   - Eliminated auto-refresh for noaa and alert log pages.
+                   - Graphs now use correct date format.
+                   - Show time on graphs shorter than 2 days (48H).  Date on graphs longer.
+                   - Fix heat index graph so heat is in red.
+                   - Fixed station image collage not displaying correctly (tried to display cameras for 'friends' and failed.)
+                   - TODO: Click on graphs and make larger (modal?) (Fixed 7.0.2.2)
+7.0.2 -  Aug 2023  - Animated radar is now in the radar modal and alert offcanvas.  Static image only on homepage.  May revise in future.
+                   - WAG box messages are back! 
+                   - Fixed radar centering issue. Still a bit clunky, but it works.
+                   - Fixed radar sizing outside of WAG card.
+                   - Moved chart legend to bottom.  Added text for primary observation.
+                   - Fixed observation card title unit displays (Bad encoding on degree, etc.  Also removed units when empty i.e. UV Index).
+                   - ochill and oheat (wind chill and head index) now show outside temp in graph as well.
+                   - TODO: Fix jerky radar animation. (Fixed 7.0.2.1)
+                   - TODO: Change formatting in charts for shorter date ranges (display time instead of date). (Fixed 7.0.2.1)
+7.0.1 -  Feb 2023  - Added the "Friend Observation" page
+                   - Added duration label to slider and removed duration dropdown
+                   - Added legend to leaflet map
+                   - Removed story tab if there is no story in forecast modal
+7.0   -  Jan 2023  - Major backend change to ReactJS/NodeJS/React-Bootstrap framework(s)
+                   - ReactJS/React-Bootstrap allows us to update display easier and faster.
+                   - New template used in weewx with series tags.  Allowed Google Chart usage.
+                   - Carousel displayed in header scrolling all camera images for that site.
+                   - Weather alerts - tidied up display/GUI
+                   - Weather alert detail now uses offcanvas for display
+                   - WAG box - minimized for new and more compact look.
+                   - WAG box radar and other map features now use LeafletJS instead of Google Maps.  (Need to animate radar yet.)
+                   - Modal bar - tidied up display/GUI
+                   - Navigation bar - tidied up.
+                   - Added duration slider to navigation bar.  (Need to add duration display)
+                   - Redesigned station observation cards to be more compact.
+                   - Station observation cards now display gauge, records, and chart in one.
+                   - Station observation card utilizes Google Chart to display plot rather than generated image.
+                   - Station observation card plot adjusts to page display duration.
+                   - Dropped "timeline" view from station observation cards.
+                   - Further optimized routines to load data from NWS API (alert info and forecast).
+                   - Security and loading optimizations in NOAA, Alert Log, and Image Archive pages
+                   - Alert Log now uses Google Charts for display
+                   - System summary card now uses table plus Google Chart to display data.  Much cleaner and faster!
+                   - Modal dialog issues fixed. Modal display easier to control, set up, and use.
+                   - Forecast modal cleaner.  Loading optimized.  Added "Story" page if available.
+                   - TODO: PurpleAir API still broken.  Need to fix and develop new template/scripts to display.
+                   - TODO: Animate radar (Fixed 7.0.1)
+                   - TODO: Add duration display next to slider bar in navigation bar (Fixed in 7.0.1)
+                   - TODO: Add current outdoor temp to heat index and wind chill chart (Fixed 7.0.2)
+                   - TODO: Fix sorting issue on Alert Log table (date) (Fixed 7.0.2.1)
+                   - TODO: Add legend to leaflet maps (Fixed in 7.0.1)
+                   - TODO: Remove "Story" tab in forecast modal if story isn't available. (Fixed in 7.0.1)
+                   - TODO: Dynamic navigation
+                   - TODO: Page status constants
+--------------------------------
+6.1.5 -  May 2022  - Moved to https.  Forwarded http.
+                   - Updated backend scripts for alerts and images
+                   - TODO: PurpleAir API broken.  Need to develop new scripts using new API.
+6.1.4 -  Dec 2021  - Added modal with national forecast map
+                   - Added links for sites with FlightAware equipment
+                   - Added aqi in wag for stations with Purple Air equipment
+                   - Added links for sites with Purple Air equipment
+                   - Added et gauge. Fixed from 6.1.1.
+                   - Added indicators on system map for stations with FlightAware or onsite air quality equipment.
+                   - System Map legend now hidden on small, x-small screens
+                   - Separated total rain and rain rate gauges.
+                   - Changed initial radar zoom in modal
+                   - Fixed alert banner showing when all alerts filterd.  Fixed from 6.1.2
+6.1.3.1- Aug 2021  - GOES/Satellite image modal now same modal with dropdown. Fixed from 6.1.3.
+                   - Station camera image modal now with dropdown to select each image
+6.1.3 -  Jul 2021  - Added GOES satellite image modal box and button in modal row
+                   - Added NOAA satellite image modal box and button in modal row
+                   - Big Image modal is now modal-lg for a bigger image
+                   - TODO: GOES/NOAA satellite image in same modal with dropdown. (Fixed 6.1.3.1)
+6.1.2 -  May 2021  - Fixed UV not showing up in station summary page
+                   - Fixed issue with ET being displayed and logged
+                   - Fixed issue where camera only station couldn't display image archive. Only disable current weather and NOAA instad of entire page selection list
+                   - WUnderground radar has become unstable/depreciated. Using google map with overlay instead.
+                       * Converted to basically static radar loop in WAG box
+                       * Added 'Radar' modal button in modal row to bring up radar modal. Plan to add features in modal in future.
+                       * Added radar overlay to system map page. Displays current radar image. No loop.
+                       * Added current radar overlay to alert detail map.
+                   - Map in About Modal is also now static and formatted similarly to WAG.
+                   - When we want to center a map on objects, we now zoom to fit also.
+                   - Fixed weather-icon font css path issue.
+                   - Alert Log now defaults display to current log as it was previously.
+                   - NOAA Archive now defaults to current month as it was previously.
+                   - Added satellite modal which pulls pre-determined latest image from URL specified. (Currently experimental being pulled from Zeeland receiving station.)
+                   - TODO: Still an issue with alert banner. When all alerts removed by filter, alert box not collapsed. (Fixed 6.1.4)
+6.1.1 -  Mar 2021  - Fixed alert banner issue to reset color when all alerts had expired
+                   - Fixed alert sorting issue when filtered alerts present
+                   - Fixed alert banner displaying filtered alerts when only one alert issued
+                   - Fixed wind gust timeline was using wind speed dataB
+                   - Fixed alltime record for solar was only looking at last year
+                   - Fixed the observation card headers to remove parenthesis when no units specified
+                   - Updated template, wag, and observations to report UV data if available
+                   - Added evapotranspiration to wxsummary template
+                   - Added et to solar observation section table
+                   - Added larger card-deck-autofit for system images page
+                   - Added filter and search to alert log
+                   - Added min/now/max values to System Summary table
+                   - TODO: Add ET tab to Solar Radiation observation card. (Fixed 6.1.4)
+                   - TODO: Use weewx observation labels for observation cards (Fixed 7.0)
+6.1.0 -  Dec 2020  - Major backend changes and many optimizations
+                   - Page only loads needed areas on redraw or refresh which is a huge optimization
+                   - Backend code standardization
+                   - Backend CSS improvements
+                   - Added site image to header for medium and larger screens
+                   - Warning flag shown in header for outdated data
+                   - WAG box now shows data for weather station closest to site if site does not have weather info itself (camera only, etc)
+                   - Removed page title from navigation bar.  Now displayed in main header.
+                   - Moved navigation dropdowns to left side
+                   - TODO: Remove/hide invalid selections for station (Fixed 7.0)
+                   - TODO: Fix selection issue so user doesn't need to unselect/reselect sometimes. (Fixed 7.0)
+                   - Took tabs out of Forecast Modal. Replaced with buttons.
+                   - Forecast loads/refreshes only needed forecast on button click.
+                   - Fixed day/night in Forecast Modal to display correctly.
+                   - About Modal shows only valid info for stations without weather data (TODO: disable button on invalid stations?)
+                   - Almanac Modal shows only valid info for stations without weather data (TODO: disable button on invalid station)
+                   - Weather Info/Observations cleanup
+                       * Tabs with plot/gauge/timeline at top of each card. Only one visible at a time.
+                       * Table for each observation below the tab area and horizontal for more space
+                   - Fixed some missing plots in observation area
+                   - Fixed a couple of non-standard plots in observation area
+                   - Image Archive tabs are now a button group (like forecast)
+                   - Image Archive now loads one tab at a time when button is clicked
+                   - Fixed backend image archive script that maintains archive
+                   - Major optimizations in System Summary page and table
+                   - Bootstrap 4.5.3
+                   - Font Awesome 4.7.0
+                   - Moved table visualization to Bootstrap-Table.
+                   - Charts still remain with Google Charts.
+                   - TODO: Some further code cleanup/standardization now that point release functional (Fixed)
+6.0.2 -  Sep 2020  - Added filter capability to banner alerts
+                   - Added alert filter information to alert info page
+                   - Added ability to show indoor temp in WAG box
+                   - Added tab to wspeed card to show graph of wind direction
+                   - Added alert detail modal to alert log. Needs cleanup in next version.
+6.0.1 -  May 2020  - Fixed moon full/new and solstice/equinox to display in chronological order
+                   - Fixed template json error in observations causing webGUI to bomb
+                   - Fixed template errors that caused issues when installed WeeWx 4.0 upgrade
+                   - Fixed skin and weewx configuration files.  Caused several errors when upgrading to WeeWx 4.0
+                   - Fixed home button.  Now goes to default station, page, etc instead of current station and default page
+                   - Fixed week (d7) stats.  Incorrect label in template.
+                   - Fixed alert grouping and sorting issue.  Alerts are grouped by location and sorted by event type and start time
+                   - Fixed issue where alert(s) for last location were not displayed.
+                   - Fixed extreme alert color display and maxSeverity display
+                   - Extreme alert colors now shown for Flash Flood, Tornado, Tropical Storm, Hurricane, and Blizzard Warnings
+                   - Fixed alert color coding when GPS coordinates were present.  Previously always red.
+                   - Fixed alert card collapse glitch
+                   - Fixed wind gust direction not as ordinal compass
+                   - If alert array contains no entries, we get out of event processing early.  Improve performance.
+                   - Added alert county names to info icon in alert header (like was in 5.x release)
+                   - Added "Active" badge to alerts in banner and in log
+                   - Added alarms section in json and updated script to check and alert on alarms
+                   - Added tooltips on weather stat table. Display high and low temperature times.
+                   - Alert log sorted by date newest to oldest by default
+                   - Fixed AQI button color issue
+                   - Fixed AQI parameters - now display subscripts correctly
+                   - Fixed the forecast map not displaying - NWS changed API
+                   - Added legend to System Map
+                   - Radar now shows station location and branding correctly
+                   - Readded link to this file in footer
+                   - WAG Console now scrolls so message can be read on narrow screens
+6.0   -  Mar 2020  - Complete and major website design change from backend to frontend layout
+                   - Pull data from all stations to one common website
+                   - Update time moved back to banner for visibility
+                   - Removed sidebar navigation
+                   - Weather alert list with timeline and NWS map moved to main
+                   - Weather At-A-Glance with radar moved to main
+                   - Rest of items in sidebar moved to modal boxes with access via buttons
+                   - Navigation done via dropdown and time duration buttons
+                   - Timeline, Table, Plot, and Graphic weather information combined into weather screen
+                   - Plots visible via modal click.  Want to move to graph from image at some point.
+                   - Timelapse video reintroduced.  If available, found in video archive.
+                   - Upgraded to Bootstrap 4.4.1
+                   - Upgraded to FontAwesome 4.7.0
+                   - Moved to Google for Charts, Maps, and Tables from amCharts, Arcgis, and Tabulator
+--------------------------------
+5.0   -  May 2019  - Upgraded to Bootstrap 4.3.2
+                   - Moved to json for weather data file
+                   - Piloting local/global scripts on Rockford station only. Will spread out if reliable.
+                   - Fixed solstice/equinox and new/full moon order issue
+                   - Fixed HTML formatting issue in summary table
+                   - Added checking to page displays. Don't show invalid pages for site.
+--------------------------------
+4.1   -  Apr 2019  - Upgraded to Bootstrap 4.1.2
+                   - Upgraded to arcgis 4.7
+                   - Upgraded to Tabulator 4.2.3
+                   - Upgraded to FontAwesome 4.7.0
+                   - Created Weather Briefing page
+                   - Added weather alert log
+                   - Fixed missing alert icons
+                   - Added/Removed alerts to get to current from NWS
+                   - Optimized alert fetch and sort routines
+                   - Removed old items from xml.tmpl
+                   - Added alert information box with counties served and alerts shown info
+                   - Added home button to all pages press to return to default page
+                   - Added refresh button to all pages to allow manual refresh
+                   - Added button to alert detail page to return to alert log
+                   - Automatic switch from rain to snow works - set enabled and set dates
+                   - Fixed Camera-Only display.  Broken in last release
+                   - Fixed issue where summary page showed bad lat/lon
+                   - Fixed map showing non-full stations (i.e. camera only)
+                   - Fixed broken link to archive from image window
+                   - Added Air Quality Alert
+                   - If there are no alerts, collapse the alert card
+                   - Started preparation to move all to JQuery json from weird JS json parse.  Complete in later release.
+4.0   -  May 2018  - Upgraded to Bootstrap 4.1.
+                   - Moved from primarily PHP to HTML with Javascript.
+                   - Pull as much data from easily located variables and constants and NWS API as possible.
+                   - Alerts pages now are in bootstrap format also instead of using old non-mobile format.
+                   - Alerts displayed on esri map instead of Google map for consistency.
+                   - Implemented new Forecast script to utilize NWS API.  Old forecast script no longer worked.
+                   - Implemented new Alerts script to utilize NWS API.
+                   - Removed extraneous XML weather data files that had been carryovers from past.
+                   - Fixed almanac bug that didn't display moon phase using simple almanac.
+                   - Major overhaul to graphics page --  simplify color display and also converted to a gauge format.
+                   - Major overhaul to most tables -- uses tabulator to create table
+                   - Lots of code streamlining.
+                   - Lots of formatting cleanup.
+                   - Custom CSS now outside of main file.
+                   - Most javascript outside main file except small jQuery/AJAX stuff.
+--------------------------------
+3.1.2 -  Oct 2017  - Station summary now uses variables for stations to make easier to add stations later
+                   - Added additional stats to WAG box (rain accum, wind direction)
+                   - Fixed graphics page error where ticks for bars showing outside limits of bar
+                   - Show camera image on system map (if available)
+                   - Revamped Weather Alerts box with new layout and icons
+3.1.1 -  Sep 2017  - System map now uses esri maps instead of Google Maps
+                   - System map now shows status automatically
+                   - Show station summary on system map
+3.1   -  Apr 2017  - Fixed error in windchill on plots pages
+                   - Reformatted Alerts panel for appropriate Watch/Warning color display.
+                   - Wind chill now displayed in WAG only when otemp less than 53 and wind chill is different than otemp
+                   - Heat index now displayed in WAG only when otemp greater than 67 and heat index is different than otemp
+                   - Added colorized alerts panel to weather briefing page
+                   - Show Timeframe in Summary Page
+                   - Added wind direction to graphics page
+                   - Revamped graphics page class backend
+                   - Combined graphics min/current/avg all on one graph
+                   - Auto-scaling of graphics bars
+                   - Added environmental triggers in weather summary (Ada fan & critical)
+                   - Added environmental class for status display (Ada fan & critical)
+                   - Added allstar_wx.txt.tmpl file in skin folder for use with allstar text to speech
+                   - Missing windchill and heatindex plots on some stations resolved
+                   - Click on station map and get critical weather stats.
+                   - (Still In Progress) Graphical version of summary page for KC8EST, et. al.
+3.0.1 -  Feb 2017  - Fixed bug in almanac's moon phase bar.
+                   - Fixed administrative message not being displayed.
+                   - Fixed administrative message icon and text.
+                   - Fixed system map errors causing it to periodically not be displayed.
+                   - Fixed windchill bug in plots page.
+                   - Image archive script now uses gen 2/3 cameras instead of gen 1/2.
+                   - WU Image Uploader not working on all sites due to camera upgrades. Fixed.
+                   - Reinstalled and reactivated cmon
+3.0   -  Jan 2017  - Template changed to XML file. Pages grab data from there.
+                   - Now using bootstrap 4-alpha6 as the backbone
+                   - All pages moved to classes
+                   - New Graphics pages
+                   - Major rework of backend programming
+                   - Reformatting of website frontend
+                   - Added wxbrief.php for web devices when just want brief look and fast loading page
+                   - Alarm scripts added in beta-type form
+                   - More security enhancements to fail2ban
+--------------------------------
+2.2   -  Jan 2017  - Further security enhancements to backend.
+                   - Made navigation bar more easily transferable across sites.
+                   - Removed numbers from image archive page (left over from previous troubleshooting).
+                   - Major code clean up.
+                   - All tables drawn from arrays instead of hit and miss ways to draw a table.
+                   - Refresh panels by auto-timer and/or click (hopefully).
+                   - Adjusted minimum and maximum temperature color limits for better indication at extreme temperatures.
+                   - Added info button to WAG box.
+2.1.3 -  Dec 2016  - Several security enhancements to backend.
+                   - Added info button to alerts card.
+                   - Added Byron Center camera to stations navigation bar.
+                   - Added Auxiliary Station Camera Image page to weather.php (for Byron Center primarily)
+                   - Fixed responsive-table issue on plot pages.
+                   - Fixed responsive-table issue on station almanac page.
+2.1.2 -  Oct 2016  - Windchill label now appears when temperature is below 55 degrees instead of only when windchill is present.
+                   - Fixed number format in WAG box so php doesn't error out
+                   - Added next full/new moon to almanac page (if pyephrem is available)
+                   - Changed several other inconsistencies in page templates
+                   - Summary page now auto-refreshes.  More work to do.
+2.1.1 -  Sep 2016  - Migrated to bootstrap 4.0-A4 as the backbone.
+                   - Templatized most of the pages for reuse and minimal changes from station to station.
+2.1   -  Aug 2016  - Migrated to bootstrap 3.7.4 as the backbone.  Using default styling.
+--------------------------------
+1.2   - Early 2016 - All data and web services moved to new webserver.
+                   - Moved from Davis WeatherLink software to weewx for continuity with other W8AGT stations.
+1.1   -  Oct 2015  - Major customizations done to WeatherLink's default template.
+1.0   -  Nov 2013  - Initial website created. Running off Davis Weatherlink software default template
